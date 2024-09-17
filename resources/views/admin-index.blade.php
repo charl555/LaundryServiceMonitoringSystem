@@ -21,7 +21,7 @@
 
     <section id="menu">
         <div class="logo">
-            <img src="https://scontent.fcgy2-4.fna.fbcdn.net/v/t1.15752-9/438267256_430040703096224_478625623721296940_n.png?_nc_cat=108&ccb=1-7&_nc_sid=5f2048&_nc_ohc=mLksytF425oQ7kNvgEgqKD0&_nc_ht=scontent.fcgy2-4.fna&oh=03_Q7cD1QHs9h10sC9hYVIXXZbCr93Dfl1BNNPvvk_NrrZaR9mNlQ&oe=66911032" alt="logo">
+            <img src="images/logo.png" alt="logo">
             <h2>Wash n Dry</h2>
         </div>
 
@@ -49,7 +49,7 @@
             
                 <div class="profile">
                     <i class="far fa-bell"></i>
-                    <img src="https://scontent.fcgy2-4.fna.fbcdn.net/v/t1.15752-9/412026683_879342310558683_6243308313018228149_n.png?_nc_cat=105&ccb=1-7&_nc_sid=5f2048&_nc_ohc=n8lZLly_lMcQ7kNvgEjHp0s&_nc_ht=scontent.fcgy2-4.fna&oh=03_Q7cD1QELAdbSXlaLSwCvWR9Q0vCzmnYpV5cCQ2rt0UEi0X7gEQ&oe=6691050B" alt="profile">        
+                    <img src="images/defaultprofile.png" alt="profile">        
                     <a class="btn" href="{{ route('logout') }}" role="button"
                    onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Log Out</a>
                 <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">

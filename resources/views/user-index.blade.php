@@ -15,7 +15,7 @@
 <body>
     <section id="menu">
         <div class="logo">
-        <img src="https://scontent.fcgy2-4.fna.fbcdn.net/v/t1.15752-9/438267256_430040703096224_478625623721296940_n.png?_nc_cat=108&ccb=1-7&_nc_sid=5f2048&_nc_ohc=mLksytF425oQ7kNvgEgqKD0&_nc_ht=scontent.fcgy2-4.fna&oh=03_Q7cD1QHs9h10sC9hYVIXXZbCr93Dfl1BNNPvvk_NrrZaR9mNlQ&oe=66911032" alt="logo">
+        <img src="images/logo.png" alt="logo">
             <h2>Wash n Dry</h2>
         </div>
         <div class="items">
