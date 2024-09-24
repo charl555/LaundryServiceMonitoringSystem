@@ -17,7 +17,7 @@ return new class extends Migration
     public function up()
     {
         Schema::create('payments', function (Blueprint $table) {
-            $table->increments('PaymentID');
+            $table->id();
             $table->unsignedBigInteger('ServiceID'); // Foreign key column
             $table->foreign('ServiceID')->references('id')->on('service')->onDelete('cascade'); // Foreign key constraint
             $table->integer('Ammount');

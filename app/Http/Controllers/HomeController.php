@@ -274,27 +274,49 @@ class HomeController extends Controller
     return redirect()->route('admin.index');
 }
 
+            public function adminedit($id)
+            {
+                // Fetch the service record by its ID
+                $service = Service::findOrFail($id);
 
-public function adminedit($id)
-{
-    $service = Service::findOrFail($id);
-    // You can also fetch related data if needed
-    return view('admin-edit', ['service' => $service]);
-}
+                // Fetch the corresponding payment record using PaymentID
+                $payment = payments::where('ServiceID', $service->id)->firstOrFail();
 
-public function adminupdate(Request $request, $id)
-{
-    $service = Service::findOrFail($id);
-    // Update service record based on form input
-    $service->update([
-        'user_id' => $request->input('user_id'),
-        'ServiceDetails' => $request->input('ServiceDetails'),
-        'PickupDate' => $request->input('PickupDate'),
-        'status' => $request->input('status'),
-    ]);
-    // Redirect back with success message
-    return redirect()->route('admin.index');
-} 
+                // Pass both service and payment data to the view
+                return view('admin-edit', ['service' => $service, 'payment' => $payment]);
+            }
+
+            public function adminupdate(Request $request, $id)
+            {
+                // Find the service record by its primary key
+                $service = Service::findOrFail($id);
+
+                // Update service record based on form input
+                $service->update([
+                    'user_id' => $request->input('user_id'),
+                    'ServiceDetails' => $request->input('ServiceDetails'),
+                    'PickupDate' => $request->input('PickupDate'),
+                    'status' => $request->input('status'),
+                ]);
+
+                // Update payments record based on the PaymentID in the payments table
+                $payment = payments::where('ServiceID', $service->id)->firstOrFail();
+                $payment->update([
+                    'Ammount' => $request->input('Ammount'),
+                    'PaymentMethod' => $request->input('PaymentMethod'),
+                ]);
+
+                // Redirect back with success message
+                return redirect()->route('admin.index')->with('success', 'Service and payment details updated successfully.');
+            }
+
+
+
+
+
+
+
+
 
 public function showReceipt($id)
 {
@@ -395,6 +417,18 @@ public function archiveService($id)
         return redirect()->route('admin.index')->with('error', 'An error occurred while archiving the record.');
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
 
 }   
 

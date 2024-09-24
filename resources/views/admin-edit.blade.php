@@ -89,11 +89,11 @@
                 </div>
                 <div>
                     <label for="Ammount">Amount</label>
-                    <input type="text"  name="Ammount" value="">
+                    <input type="text"  name="Ammount" value="{{ $payment->Ammount }}">
                 </div>
                 <div>
                     <label for="PaymentMethod">Payment Method</label>
-                    <input type="text"  name="PaymentMethod" list="PaymentMethod" value="">
+                    <input type="text"  name="PaymentMethod" list="PaymentMethod" value="{{ $payment->PaymentMethod }}">
                     <datalist id="PaymentMethod">
                     <option value="Cash">
                     <option value="Credit Card">

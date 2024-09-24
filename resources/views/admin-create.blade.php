@@ -177,8 +177,6 @@
 
                     </div>
 
-
-
                 
                 <div>
                     <label for="PickupDate">Pick up Date</label>
